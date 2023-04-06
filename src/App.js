@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import DisplayMusicTable from './Components/DisplayMusicTable/DisplayMusicTable';
+import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
 import './App.css';
 
+
 function App() {
+
+  const [entries,setEntries] = useState([{title: '', artist: '', album: '', releaseDate: '', Genre: ''}])
+
+  function createNewEntry(entry) {
+    let tempEntries = [...entries, entry];
+    setEntries(tempEntries);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CreateSongForm addNewEntry={createNewEntry} />
+      <DisplayMusicTable entries={entries} />
     </div>
   );
 }
