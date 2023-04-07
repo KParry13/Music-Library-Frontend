@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
-const SearchBar = (props) => {
+// const SearchBar = (props) => {
 
-    const [search, setSearch] = useState('');
+//     const [search, setSearch] = useState('');
     
 
 
-    return ( 
+//     return ( 
 
-     );
-}
+//      );
+// }
  
-export default SearchBar;
+// export default SearchBar;

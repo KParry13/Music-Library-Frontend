@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 
-const [like, setLike] = useState('inactive')
+// const [like, setLike] = useState('inactive')
 const DisplayMusicTable = (props) => {
     
-    function handleLike() {
-        if(like === 'inactive'){
-            setLike('teal')
-        }
-        else {
-            setLike('inactive')
-        }
-    }
+    // function handleLike() {
+    //     if(like === 'inactive'){
+    //         setLike('teal')
+    //     }
+    //     else {
+    //         setLike('inactive')
+    //     }
+    // }
     
     return (
         
         <table className="table">
             <thead>
                 <tr>
-                    
+                    <id>Id</id>
                     <th>Title</th>
                     <th>Artist</th>
                     <th>Album</th>
                     <th>Release Date</th>
                     <th>Genre</th>
+                    <th>Running Time</th>
                     <th>Like</th>
                 </tr>
             </thead>
@@ -34,8 +35,9 @@ const DisplayMusicTable = (props) => {
                             <td>{entry.title}</td>
                             <td>{entry.artist}</td>
                             <td>{entry.album}</td>
-                            <td>{entry.release_date}</td>
+                            <td>{entry.releaseDate}</td>
                             <td>{entry.genre}</td>
+                            <td>{entry.runningTime}</td>
                             <td>{entry.like}</td>
                         </tr>
                     )

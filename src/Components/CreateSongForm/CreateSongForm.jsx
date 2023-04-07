@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 const CreateSongForm = (props) => {
-
+    
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
     const [releaseDate, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
-    const [running_time, setRunning_time] = useState('');
+    const [runningTime, setRunningTime] = useState(0);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -17,7 +17,7 @@ const CreateSongForm = (props) => {
             album: album,
             releaseDate: releaseDate,
             genre: genre,
-            running_time: running_time
+            runningTime: runningTime
         };
         console.log(newEntry);
         props.addNewEntry(newEntry);
@@ -26,6 +26,7 @@ const CreateSongForm = (props) => {
         setAlbum('')
         setReleaseDate('')
         setGenre('')
+        setRunningTime(0)
     }
 
     return ( 
@@ -50,6 +51,13 @@ const CreateSongForm = (props) => {
                 <label>Genre</label>
                 <input type='genre' value={genre} onChange={(event) => setGenre(event.target.value)} />
             </div>
+            <div>
+                <label>Running Time</label>
+                <input type='number' value={runningTime} onChange={(event) => setRunningTime(event.target.value)} />
+            </div>
+            <button>
+                Add Song
+            </button>
         </form>
      );
 }
