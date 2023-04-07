@@ -1,4 +1,17 @@
+import React, { useState } from 'react';
+
+const [like, setLike] = useState('inactive')
 const DisplayMusicTable = (props) => {
+    
+    function handleLike() {
+        if(like === 'inactive'){
+            setLike('teal')
+        }
+        else {
+            setLike('inactive')
+        }
+    }
+    
     return (
         
         <table className="table">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DisplayMusicTable from './Components/DisplayMusicTable/DisplayMusicTable';
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
+import NavBar from './Components/NavBar/NavBar';
 import './App.css';
 
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div>
+      <NavBar />
       <CreateSongForm addNewEntry={createNewEntry} />
       <DisplayMusicTable entries={entries} />
     </div>

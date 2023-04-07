@@ -7,6 +7,7 @@ const CreateSongForm = (props) => {
     const [album, setAlbum] = useState('');
     const [releaseDate, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
+    const [running_time, setRunning_time] = useState('');
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -15,7 +16,8 @@ const CreateSongForm = (props) => {
             artist: artist,
             album: album,
             releaseDate: releaseDate,
-            genre: genre
+            genre: genre,
+            running_time: running_time
         };
         console.log(newEntry);
         props.addNewEntry(newEntry);
