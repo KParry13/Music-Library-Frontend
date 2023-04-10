@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 
 const DisplayMusicTable = (props) => {
-    
+    console.log(props.searchQuery)
+    let filteredSongs = props.songs.filter(entry => (
+        entry.title.toLowerCase().includes(props.searchQuery.toLowerCase()) || 
+        (entry.artist.toLowerCase().includes(props.searchQuery.toLowerCase())) ||
+        (entry.album.toLowerCase().includes(props.searchQuery.toLowerCase())) ||
+        (entry.genre.toLowerCase().includes(props.searchQuery.toLowerCase())) ||
+        (entry.release_date.includes(props.searchQuery))
+    ))
+    console.log(filteredSongs)
     return (
         
         <table className="table">
@@ -18,7 +26,7 @@ const DisplayMusicTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.songs.map((entry, index) =>{
+                {filteredSongs.map((entry, index) =>{
                     return (
                         <tr key={index}>
                             <td>{index + 1}</td>

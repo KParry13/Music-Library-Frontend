@@ -4,10 +4,13 @@ import DisplayMusicTable from './Components/DisplayMusicTable/DisplayMusicTable'
 import CreateSongForm from './Components/CreateSongForm/CreateSongForm';
 import NavBar from './Components/NavBar/NavBar';
 import './App.css';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 
 function App() {
   const [songs, setSongs] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
+
   useEffect(() => {
     getAllSongs();
   }, [])
@@ -21,17 +24,20 @@ function App() {
     let response = await axios.post('http://127.0.0.1:5000/api/songs', newSong);
     if(response.status === 201){
       await getAllSongs();
+      createSong(response.data.newSong)
     }
   }
 
+  
+  
   return (
     <div>
       <NavBar />
-      <CreateSongForm addNewEntry={createSong} />
-      <DisplayMusicTable songs={songs} />
-      {/* {console.log("Songs From Database", songs)} */}
+      <SearchBar setSearchQuery={setSearchQuery}/>
+      <CreateSongForm createSong={createSong} />
+      <DisplayMusicTable songs={songs} searchQuery={searchQuery} />
       
-    
+      
     </div>
   );
 }

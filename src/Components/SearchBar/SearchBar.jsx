@@ -1,14 +1,26 @@
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 
-// const SearchBar = (props) => {
+const SearchBar = (props) => {
 
-//     const [search, setSearch] = useState('');
     
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        // props.setSearchQuery(event.target.value)
+        console.log(event.target.value)
+    }
 
-//     return ( 
-
-//      );
-// }
+    
+    return ( 
+        <form onSubmit={(handleSubmit)}>
+            <label>Search Songs</label>
+            <input 
+            type="text"
+            placeholder="Search"
+            onChange={(event)=>props.setSearchQuery(event.target.value)}  />
+            
+        </form>
+     );
+}
  
-// export default SearchBar;
+export default SearchBar;
