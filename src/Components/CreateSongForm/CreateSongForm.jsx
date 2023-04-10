@@ -5,22 +5,22 @@ const CreateSongForm = (props) => {
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
     const [album, setAlbum] = useState('');
-    const [releaseDate, setReleaseDate] = useState('');
+    const [date, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
     const [runningTime, setRunningTime] = useState(0);
 
     function handleSubmit(event) {
         event.preventDefault();
-        let newEntry = {
+        let newSong = {
             title: title,
             artist: artist,
             album: album,
-            releaseDate: releaseDate,
+            releaseDate: date,
             genre: genre,
             runningTime: runningTime
         };
-        console.log(newEntry);
-        props.addNewEntry(newEntry);
+        console.log(newSong);
+        props.createSong(newSong);
         setTitle('')
         setArtist('')
         setAlbum('')
@@ -45,7 +45,7 @@ const CreateSongForm = (props) => {
             </div>
             <div>
                 <label>Release Date</label>
-                <input type='release date' value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} />
+                <input type='date' value={date} onChange={(event) => setReleaseDate(event.target.value)} />
             </div>
             <div>
                 <label>Genre</label>

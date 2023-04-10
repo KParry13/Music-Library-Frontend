@@ -7,30 +7,31 @@ import './App.css';
 
 
 function App() {
-
-  const [entries,setEntries] = useState([{title: '', artist: '', album: '', releaseDate: '', Genre: ''}])
   const [songs, setSongs] = useState([])
-
   useEffect(() => {
     getAllSongs();
   }, [])
 
   async function getAllSongs(){
     let response = await axios.get('http://127.0.0.1:5000/api/songs');
-    console.log("Songs in database", response.data);
-    
+    setSongs(response.data.songs);
   }
-
-  function createNewEntry(entry) {
-    let tempEntries = [...entries, entry];
-    setEntries(tempEntries);
+  
+  async function createSong(newSong) {
+    let response = await axios.post('http://127.0.0.1:5000/api/songs', newSong);
+    if(response.status === 201){
+      await getAllSongs();
+    }
   }
 
   return (
     <div>
       <NavBar />
-      <CreateSongForm addNewEntry={createNewEntry} />
-      <DisplayMusicTable entries={entries} />
+      <CreateSongForm addNewEntry={createSong} />
+      <DisplayMusicTable songs={songs} />
+      {/* {console.log("Songs From Database", songs)} */}
+      
+    
     </div>
   );
 }
