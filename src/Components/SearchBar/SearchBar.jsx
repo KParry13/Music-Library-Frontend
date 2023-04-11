@@ -1,4 +1,4 @@
-
+import './SearchBar.css'
 const SearchBar = (props) => {
 
     function handleSubmit(event) {
@@ -10,14 +10,17 @@ const SearchBar = (props) => {
     
     return ( 
         <form onSubmit={(handleSubmit)}>
-            <label>
-                <img src='icons8-search-20.png' alt='magnifying glass'></img>
-            </label>
-            <input 
-            type="text"
-            placeholder="Search"
-            onChange={(event)=>props.setSearchQuery(event.target.value)}  />
-            
+            <div className="container">
+                <div>
+                    <label>
+                        <img src='icons8-search-20.png' alt='magnifying glass'></img>
+                    </label>
+                    <input 
+                    type="text"
+                    placeholder="Search"
+                    onChange={(event)=>props.setSearchQuery(event.target.value)}  />
+                </div>   
+            </div>
         </form>
      );
 }

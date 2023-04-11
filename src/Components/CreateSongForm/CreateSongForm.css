@@ -1,8 +1,7 @@
 .container {
     display: flex;
     justify-content: space-around;
-    padding: 1em;
-    margin: 1em;
+    background-color: lightblue;
 }
 
 .box {
@@ -10,7 +9,7 @@
 }
 
 label {
-    margin: .5em
+    margin: 1em
 }
 
 button {
@@ -22,8 +21,9 @@ button {
     background-color: rgb(139, 157, 193);
 }
 
-.but-container {
+.b-container {
     display: flex;
     justify-content: center;
     background-color: cadetblue;
+    margin-top: 1em;
 }

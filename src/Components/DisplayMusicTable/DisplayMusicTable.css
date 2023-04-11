@@ -1,0 +1,13 @@
+thead {
+    background-color: paleturquoise;
+}
+
+.border-box {
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    margin: 1em;
+    
+}
+
+
