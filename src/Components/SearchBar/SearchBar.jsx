@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
 
 const SearchBar = (props) => {
-
-    
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -13,7 +10,9 @@ const SearchBar = (props) => {
     
     return ( 
         <form onSubmit={(handleSubmit)}>
-            <label>Search Songs</label>
+            <label>
+                <img src='icons8-search-20.png' alt='magnifying glass'></img>
+            </label>
             <input 
             type="text"
             placeholder="Search"

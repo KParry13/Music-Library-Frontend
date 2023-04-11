@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 
 const DisplayMusicTable = (props) => {
     console.log(props.searchQuery)
@@ -25,10 +24,10 @@ const DisplayMusicTable = (props) => {
                     <th>Likes</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                 {filteredSongs.map((entry, index) =>{
                     return (
-                        <tr key={index}>
+                        <tr key={index} className="table-striped">
                             <td>{index + 1}</td>
                             <td>{entry.title}</td>
                             <td>{entry.artist}</td>
