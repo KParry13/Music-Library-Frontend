@@ -65,7 +65,7 @@ const CreateSongForm = (props) => {
                 </div>
             </div>
         <div className='b-container'>
-            <button type='button' className="btn btn-primary btn-lg btn-block" data-test="submit btn">
+            <button type='submit' className="btn btn-info btn-lg btn-block" data-test="submit btn">
                 Add Song
             </button>
         </div>

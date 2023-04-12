@@ -15,7 +15,7 @@ const DisplayMusicTable = (props) => {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th />
+                        <th>#</th> 
                         <th>Title</th>
                         <th>Artist</th>
                         <th>Album</th>
@@ -38,7 +38,7 @@ const DisplayMusicTable = (props) => {
                                 <td>{entry.genre}</td>
                                 <td>{entry.running_time}</td>
                                 <td>
-                                    <button>Delete</button>
+                                    <button type='submit' onClick={() => props.deleteSong(entry.id)}>Delete</button>
                                 </td>
                                 <td>{entry.likes}</td>
                             </tr>
