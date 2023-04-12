@@ -28,6 +28,14 @@ function App() {
     }
   }
 
+  async function deleteSong(removeSong) {
+    let response = await axios.delete('http://127.0.0.1:5000/api/songs', removeSong);
+    if(response.status === 201) {
+      await getAllSongs();
+      deleteSong(response.data.removeSong)
+    }
+  }
+
   
   
   return (
@@ -35,7 +43,7 @@ function App() {
       <NavBar />
       <SearchBar setSearchQuery={setSearchQuery}/>
       <CreateSongForm createSong={createSong} />
-      <DisplayMusicTable songs={songs} searchQuery={searchQuery} />
+      <DisplayMusicTable songs={songs} searchQuery={searchQuery} deleteSong={deleteSong} />
       
       
     </div>

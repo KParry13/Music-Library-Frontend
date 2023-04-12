@@ -18,7 +18,7 @@ const SearchBar = (props) => {
                     <input 
                     type="text"
                     placeholder="Search"
-                    onChange={(event)=>props.setSearchQuery(event.target.value)}  />
+                    onChange={(event)=>props.setSearchQuery(event.target.value)} data-test="input" />
                 </div>   
             </div>
         </form>
