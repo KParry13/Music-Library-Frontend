@@ -30,7 +30,7 @@ function App() {
 
   async function deleteSong(songId) {
     let response = await axios.delete(`http://127.0.0.1:5000/api/songs/${songId}`);
-    if(response.status === 201) {
+    if(response.status === 204) {
       await getAllSongs();
       
     }
