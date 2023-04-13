@@ -1,12 +1,9 @@
+import './NavBar.css'
 
 const NavBar = (props) => {
-    const myStyle = {
-        backgroundColor: "#7BDCA6",
-        padding: "15px",
-    }
 
     return ( 
-            <h1 style={myStyle} >Kayla's Music Library</h1>
+            <h1  >Kayla's Music Library <img src="music-folder.png" alt="folder with a music note"></img> </h1>
      );
 }
  

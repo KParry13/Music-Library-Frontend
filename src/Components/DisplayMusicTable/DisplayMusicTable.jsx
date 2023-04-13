@@ -40,7 +40,10 @@ const DisplayMusicTable = (props) => {
                                 <td>
                                     <button type='submit' onClick={() => props.deleteSong(entry.id)}>Delete</button>
                                 </td>
-                                <td>{entry.likes}</td>
+                                <td>
+                                    
+                                    {entry.likes}
+                                </td>
                             </tr>
                         )
                     })}

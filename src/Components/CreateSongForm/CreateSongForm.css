@@ -25,5 +25,8 @@ button {
     display: flex;
     justify-content: center;
     background-color: cadetblue;
-    margin-top: 1em;
+    margin: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    
 }

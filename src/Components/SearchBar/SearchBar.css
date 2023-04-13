@@ -1,4 +1,5 @@
 .container {
     display: flex;
-    
+    border-color: rgb(43, 85, 126);
+    border-style: solid;
 }

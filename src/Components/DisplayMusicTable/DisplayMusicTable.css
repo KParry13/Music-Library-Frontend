@@ -1,5 +1,6 @@
 thead {
     background-color: paleturquoise;
+    
 }
 
 .border-box {
@@ -7,6 +8,7 @@ thead {
     border-style: solid;
     border-color: black;
     margin: 1em;
+    border-radius: 5px;
     
 }
 
