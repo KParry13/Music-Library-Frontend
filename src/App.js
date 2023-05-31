@@ -24,7 +24,6 @@ function App() {
     let response = await axios.post('http://127.0.0.1:5000/api/songs', newSong);
     if(response.status === 201){
       await getAllSongs();
-      createSong(response.data.newSong)
     }
   }
 
@@ -32,7 +31,20 @@ function App() {
     let response = await axios.delete(`http://127.0.0.1:5000/api/songs/${songId}`);
     if(response.status === 204) {
       await getAllSongs();
-      
+    }
+  }
+
+  async function likeSong(songId) {
+    let response = await axios.patch(`http://127.0.0.1:5000/api/songs_like/${songId}`);
+    if(response.status === 200) {
+      await getAllSongs();
+    }
+  }
+
+  async function dislikeSong(songId) {
+    let response = await axios.patch(`http://127.0.0.1:5000/api/songs_dislike/${songId}`);
+    if(response.status === 200) {
+      await getAllSongs();
     }
   }
 
@@ -43,7 +55,7 @@ function App() {
       <NavBar />
       <SearchBar setSearchQuery={setSearchQuery} />
       <CreateSongForm createSong={createSong} />
-      <DisplayMusicTable songs={songs} searchQuery={searchQuery} deleteSong={deleteSong} />
+      <DisplayMusicTable songs={songs} searchQuery={searchQuery} deleteSong={deleteSong} likeSong={likeSong} dislikeSong={dislikeSong} />
 
     </div>
   );

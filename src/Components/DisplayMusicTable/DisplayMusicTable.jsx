@@ -24,6 +24,7 @@ const DisplayMusicTable = (props) => {
                         <th>Running Time</th>
                         <th>Delete</th>
                         <th>Likes</th>
+                        <th>Dislikes</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -41,8 +42,12 @@ const DisplayMusicTable = (props) => {
                                     <button type='submit' onClick={() => props.deleteSong(entry.id)}>Delete</button>
                                 </td>
                                 <td>
-                                    
+                                    <button onClick={() => props.likeSong(entry.id)} >Like</button>
                                     {entry.likes}
+                                </td>
+                                <td>
+                                    <button onClick={() => props.dislikeSong(entry.id)} >Dislike</button>
+                                    {entry.dislikes}
                                 </td>
                             </tr>
                         )
